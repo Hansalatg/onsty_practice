@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // 🔥 Initialize Firebase
+  await Firebase.initializeApp(); 
   runApp(const MyApp());
 }
 
@@ -113,7 +113,7 @@ class _InstructorDashboardState extends State<InstructorDashboard> {
           IconButton(
             icon: const Icon(Icons.settings, color: Colors.white),
             onPressed: () {
-              // Navigation to settings page removed
+             
             },
           ),
         ],

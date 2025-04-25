@@ -41,48 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAkblQWZkmCoojn7tRme9ygRYkfFCjFD3I',
-    appId: '1:839282962415:web:ee45fc3fbf61dba7b1d01a',
-    messagingSenderId: '839282962415',
-    projectId: 'onlinelearningapp-10145',
-    authDomain: 'onlinelearningapp-10145.firebaseapp.com',
-    storageBucket: 'onlinelearningapp-10145.firebasestorage.app',
-    measurementId: 'G-YXMD2D2R9N',
+    apiKey: 'AIzaSyA47UJqi0Qaor-zJwOdd-eccVX5yMU0JLE',
+    appId: '1:553023711865:web:e166daf7566fd1a970c2a8',
+    messagingSenderId: '553023711865',
+    projectId: 'onstypractice',
+    authDomain: 'onstypractice.firebaseapp.com',
+    storageBucket: 'onstypractice.firebasestorage.app',
+    measurementId: 'G-5QW49PMB70',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCoDAqzCtOQtMuvEDmkXsad4bG3sPlSia4',
-    appId: '1:839282962415:android:c2dd3c2555e2c7a8b1d01a',
-    messagingSenderId: '839282962415',
-    projectId: 'onlinelearningapp-10145',
-    storageBucket: 'onlinelearningapp-10145.firebasestorage.app',
+    apiKey: 'AIzaSyDMiIyNcOICYDxVT7oqzs5RftDNo-bNrkI',
+    appId: '1:553023711865:android:3dc336f72340ed3870c2a8',
+    messagingSenderId: '553023711865',
+    projectId: 'onstypractice',
+    storageBucket: 'onstypractice.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCA3Yno2hMOiDDwgESlyjIuhc8cS9w8Zmo',
-    appId: '1:839282962415:ios:3685666c460145bcb1d01a',
-    messagingSenderId: '839282962415',
-    projectId: 'onlinelearningapp-10145',
-    storageBucket: 'onlinelearningapp-10145.firebasestorage.app',
+    apiKey: 'AIzaSyCogpTnO0loeHjwcQ3Aw1N1NFzgkRM2OKQ',
+    appId: '1:553023711865:ios:c7684b74e05a92fe70c2a8',
+    messagingSenderId: '553023711865',
+    projectId: 'onstypractice',
+    storageBucket: 'onstypractice.firebasestorage.app',
     iosBundleId: 'com.example.flutterOnlineLearningPlatform',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCA3Yno2hMOiDDwgESlyjIuhc8cS9w8Zmo',
-    appId: '1:839282962415:ios:3685666c460145bcb1d01a',
-    messagingSenderId: '839282962415',
-    projectId: 'onlinelearningapp-10145',
-    storageBucket: 'onlinelearningapp-10145.firebasestorage.app',
+    apiKey: 'AIzaSyCogpTnO0loeHjwcQ3Aw1N1NFzgkRM2OKQ',
+    appId: '1:553023711865:ios:c7684b74e05a92fe70c2a8',
+    messagingSenderId: '553023711865',
+    projectId: 'onstypractice',
+    storageBucket: 'onstypractice.firebasestorage.app',
     iosBundleId: 'com.example.flutterOnlineLearningPlatform',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAkblQWZkmCoojn7tRme9ygRYkfFCjFD3I',
-    appId: '1:839282962415:web:649aa4929a772166b1d01a',
-    messagingSenderId: '839282962415',
-    projectId: 'onlinelearningapp-10145',
-    authDomain: 'onlinelearningapp-10145.firebaseapp.com',
-    storageBucket: 'onlinelearningapp-10145.firebasestorage.app',
-    measurementId: 'G-CQRZVE5EXY',
+    apiKey: 'AIzaSyA47UJqi0Qaor-zJwOdd-eccVX5yMU0JLE',
+    appId: '1:553023711865:web:f6370d7ff83d16d470c2a8',
+    messagingSenderId: '553023711865',
+    projectId: 'onstypractice',
+    authDomain: 'onstypractice.firebaseapp.com',
+    storageBucket: 'onstypractice.firebasestorage.app',
+    measurementId: 'G-LHEBYVRJH6',
   );
 }

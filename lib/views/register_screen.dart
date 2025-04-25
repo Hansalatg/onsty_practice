@@ -27,7 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       await _firestore.collection('users').doc(userCredential.user?.uid).set({
         'email': _emailController.text.trim(),
         'name': _nameController.text.trim(),
-        'role': 'student', // Default role as 'student', can be updated to 'teacher' or 'admin' as per your logic
+        'role': 'student',
       });
 
       // Navigate to login or dashboard screen after successful registration
