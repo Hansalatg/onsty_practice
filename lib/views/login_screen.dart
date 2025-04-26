@@ -3,6 +3,7 @@ import 'package:flutter_online_learning_platform/views/register_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart'; 
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -14,6 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final storage = FlutterSecureStorage(); 
 
   @override
   void initState() {
@@ -21,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Firebase.initializeApp(); 
   }
 
- void _login() async {
+void _login() async {
   try {
     // Sign in the user with email and password
     UserCredential userCredential = await _auth.signInWithEmailAndPassword(
@@ -29,19 +31,26 @@ class _LoginScreenState extends State<LoginScreen> {
       password: _passwordController.text.trim(),
     );
 
-    
+    // Get the user ID (UID)
     String userUID = userCredential.user?.uid ?? "";
     print("User UID: $userUID");
+
+    // Get the ID Token for the logged-in user
+    String authToken = await userCredential.user?.getIdToken() ?? '';
+    print("User Auth Token: $authToken"); // Print the token (for testing purposes)
+
+    // Store token securely using FlutterSecureStorage
+    await storage.write(key: 'authToken', value: authToken);
 
     // Fetch user data from Firestore
     DocumentSnapshot userDoc = await _firestore
         .collection('users')
-        .doc(userUID)  
+        .doc(userUID)
         .get();
 
     if (userDoc.exists) {
       // Retrieve role from Firestore
-      String role = userDoc.get('role') ?? 'unknown';  // Default to 'unknown' if no role found
+      String role = userDoc.get('role') ?? 'unknown';
       print("User Role: $role");
 
       // Navigate based on the role
@@ -58,11 +67,10 @@ class _LoginScreenState extends State<LoginScreen> {
         );
       }
     } else {
-      
       print('User data not found in Firestore, creating user document...');
       await _firestore.collection('users').doc(userUID).set({
-        'role': 'student', 
-        'name': 'Default Name', 
+        'role': 'student',
+        'name': 'Default Name',
         'email': _emailController.text.trim(),
       });
 
@@ -77,6 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
 
 
   @override
@@ -159,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          // TODO: Implement forgot password navigation
+                         
                         },
                         child: const Text(
                           'Forgot Password?',
